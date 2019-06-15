@@ -1,0 +1,25 @@
+{
+  "name": "flow-next",
+  "version": "0.0.1",
+  "description": "flow next control",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xesam/flow-next.git"
+  },
+  "keywords": [
+    "flow"
+  ],
+  "author": "xesam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xesam/flow-next/issues"
+  },
+  "homepage": "https://github.com/xesam/flow-next#readme"
+}
