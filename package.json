@@ -1,17 +1,20 @@
 {
-  "name": "flow-next",
+  "name": "@xesam/next",
   "version": "0.0.1",
-  "description": "flow next control",
-  "main": "index.js",
+  "description": "nextable",
+  "main": "./src/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "test"
   },
+  "devDependencies": {
+    "jest": "26.6.3"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xesam/flow-next.git"
+    "url": "git+https://github.com/xesam/next.git"
   },
   "keywords": [
     "flow"
@@ -19,7 +22,7 @@
   "author": "xesam",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xesam/flow-next/issues"
+    "url": "https://github.com/xesam/next/issues"
   },
-  "homepage": "https://github.com/xesam/flow-next#readme"
+  "homepage": "https://github.com/xesam/next#readme"
 }
