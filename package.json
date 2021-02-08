@@ -1,7 +1,7 @@
 {
   "name": "@xesam/next",
-  "version": "0.0.1",
-  "description": "nextable",
+  "version": "0.0.2",
+  "description": "next",
   "main": "./src/index.js",
   "directories": {
     "test": "test"
