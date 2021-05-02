@@ -1,29 +1,68 @@
-const next = require('../src/index');
+const next = require('../index');
 
-const app = next();
-app.use(function (next, option) {
-    option.friends.push('a');
-    next();
-}).use(function (next, option) {
-    option.friends.push('b');
-    next();
-}).use(function (next, option) {
-    option.friends.push('c');
-    next();
-}).use(function (next, option) {
-    option.friends.push('d');
-    next();
-}).use(function (next, option) {
-    option.friends.push('e');
-    console.log(option);
-}).catch(function (err) {
-    console.error('error!', err);
+describe('basic', () => {
+    it('nothing', done => {
+        const app = next();
+        app({
+            friends: []
+        }).then(res => {
+            expect(res).toEqual({
+                friends: []
+            });
+            done();
+        });
+    });
+    it('use sync function', done => {
+        const app = next().use(data => {
+            data.friends.push('Java');
+            return data;
+        });
+        app({
+            friends: []
+        }).then(res => {
+            expect(res).toEqual({
+                friends: ['Java']
+            });
+            done();
+        });
+    });
+    it('use async function', done => {
+        const app = next().use(data => {
+            return new Promise(resolve => {
+                setTimeout(function () {
+                    data.friends.push('Python');
+                    resolve(data);
+                }, 1000);
+            });
+        });
+        app({
+            friends: []
+        }).then(res => {
+            expect(res).toEqual({
+                friends: ['Python']
+            });
+            done();
+        });
+    });
+    it('use hybrid function', done => {
+        const app = next().use(data => {
+            data.friends.push('Java');
+            return data;
+        }).use(data => {
+            return new Promise(resolve => {
+                setTimeout(function () {
+                    data.friends.push('Python');
+                    resolve(data);
+                }, 1000);
+            });
+        });
+        app({
+            friends: []
+        }).then(res => {
+            expect(res).toEqual({
+                friends: ['Java', 'Python']
+            });
+            done();
+        });
+    });
 });
-
-const opts = {
-    name: 'xesam',
-    age: 18,
-    friends: []
-};
-
-app(opts);

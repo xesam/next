@@ -1,8 +1,8 @@
 {
   "name": "@xesam/next",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "next",
-  "main": "./src/index.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/xesam/next.git"
   },
   "keywords": [
-    "flow"
+    "js async"
   ],
   "author": "xesam",
   "license": "MIT",
