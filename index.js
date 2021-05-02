@@ -1,2 +1,2 @@
-const FlowNext = require('./src/FlowNext');
-module.exports = FlowNext;
+const next = require('./src/next');
+module.exports = next;
